@@ -1,188 +1,157 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Java Collections & Generics Portfolio</title>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --secondary: #64748b;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #1e293b;
-        }
+# 📘 Compte Rendu — TP3
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
+**Module :** UML Java  
+**Filière :** SDIA1  
+**Étudiant :** **Mustapha Elmifdali**
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+---
 
-        header {
-            text-align: center;
-            padding: 40px 0;
-            background: linear-gradient(135deg, #1e293b, #334155);
-            color: white;
-            border-radius: 15px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-        }
+## 🎯 Objectifs du TP
 
-        h1 { margin: 0; font-size: 2.5rem; }
+* Manipuler les **Collections Java** (List, Map, Set).
+* Utiliser les **Streams** et les **lambda expressions**.
+* Comprendre et appliquer les **Génériques**.
+* Mettre en pratique des opérations **CRUD**.
 
-        .section-title {
-            border-left: 5px solid var(--primary);
-            padding-left: 15px;
-            margin: 40px 0 20px;
-            color: var(--primary);
-        }
+---
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
+## I. Collections & Streams
 
-        .card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
+### 1️⃣ Manipulation d’une List de produits
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+**🧩 Problème**
+Créer une application permettant de gérer une liste de produits :
 
-        .image-container {
-            overflow: hidden;
-            background: #000;
-            height: 200px;
-        }
+* Ajout
+* Suppression
+* Modification
+* Affichage
+* Recherche par nom
 
-        /* IMAGE DECORATION & FILTERS */
-        .card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(80%) contrast(120%); /* Initial Filter */
-            transition: all 0.5s ease;
-        }
+**✅ Solution implémentée**
 
-        .card:hover img {
-            filter: grayscale(0%) brightness(110%); /* Hover Effect */
-            scale: 1.1;
-        }
+* Classe `Product` :
 
-        .card-content {
-            padding: 20px;
-        }
+  * `id : long`
+  * `name : String`
+  * `price : double`
+* Utilisation de `ArrayList<Product>`
+* Implémentation des opérations CRUD
+* Recherche par nom via la saisie utilisateur
 
-        .tag {
-            display: inline-block;
-            background: #dbeafe;
-            color: #1e40af;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+**▶️ Exécution**
 
-        code {
-            background: #f1f5f9;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: 'Courier New', Courier, monospace;
-        }
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/17f0a17e-f566-4460-8588-9e85f4158d6b" width="85%" style="border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.15); filter:contrast(105%) saturate(110%);" />
+</p>
 
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
-            .grid { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
+---
 
-<div class="container">
-    <header>
-        <h1>Java Backend Labs</h1>
-        <p>Collections, Streams, & Generics Implementation</p>
-    </header>
+### 2️⃣ Gestion des notes avec HashMap
 
-    <h2 class="section-title">I. Collections & Streams</h2>
-    <div class="grid">
-        <div class="card">
-            <div class="image-container">
-                <img src="https://github.com/user-attachments/assets/17f0a17e-f566-4460-8588-9e85f4158d6b" alt="Product Management">
-            </div>
-            <div class="card-content">
-                <span class="tag">ArrayList</span>
-                <h3>Manipulation de Produits</h3>
-                <p>Gestion CRUD complète pour une liste de produits utilisant <code>ArrayList</code>.</p>
-                <ul>
-                    <li>Recherche par nom</li>
-                    <li>Persistance en mémoire</li>
-                </ul>
-            </div>
-        </div>
+**🧩 Problème**
+Gérer les notes des étudiants avec :
 
-        <div class="card">
-            <div class="image-container">
-                <img src="https://github.com/user-attachments/assets/2eddaf22-d157-4ea8-83e9-3d208dd7b1ef" alt="Grades Management">
-            </div>
-            <div class="card-content">
-                <span class="tag">HashMap</span>
-                <h3>Gestion des Notes</h3>
-                <p>Système de suivi d'étudiants utilisant des paires Clé/Valeur.</p>
-                <ul>
-                    <li>Calcul de moyenne/min/max</li>
-                    <li>Lambdas & Stream API</li>
-                </ul>
-            </div>
-        </div>
+* Nom de l’étudiant (clé)
+* Note (valeur)
 
-        <div class="card">
-            <div class="image-container">
-                <img src="https://github.com/user-attachments/assets/710e3987-5c13-45e0-8db8-7e488e69409c" alt="Set Operations">
-            </div>
-            <div class="card-content">
-                <span class="tag">HashSet</span>
-                <h3>Groupes d'Étudiants</h3>
-                <p>Logique d'ensembles mathématiques appliquée aux collections Java.</p>
-                <ul>
-                    <li>Intersection (retainAll)</li>
-                    <li>Union (addAll)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+**✅ Solution implémentée**
 
-    <h2 class="section-title">II. Generics</h2>
-    <div class="grid">
-        <div class="card">
-            <div class="image-container">
-                <img src="https://github.com/user-attachments/assets/1999f344-be1d-43b2-9ec0-96f6bf839e66" alt="Generic Storage">
-            </div>
-            <div class="card-content">
-                <span class="tag">Generics</span>
-                <h3>GenericStorage&lt;T&gt;</h3>
-                <p>Une solution de stockage réutilisable pour n'importe quel type d'objet Java, garantissant la sécurité du typage à la compilation.</p>
-            </div>
-        </div>
-    </div>
-</div>
+* Structure : `HashMap<String, Double>`
+* Opérations réalisées :
 
-</body>
-</html>
+  * Ajout / Modification
+  * Suppression
+  * Taille de la collection
+  * Calcul de la moyenne
+  * Note minimale et maximale
+  * Vérification de la présence de 20/20
+* Affichage avec `forEach` et expressions lambda
+
+**▶️ Exemple d’exécution**
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2eddaf22-d157-4ea8-83e9-3d208dd7b1ef" width="85%" style="border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.15); filter:grayscale(10%) contrast(110%);" />
+</p>
+
+---
+
+### 3️⃣ Ensembles (HashSet) — Groupes d’étudiants
+
+**🧩 Problème**
+Gérer deux groupes d’étudiants et afficher :
+
+* L’intersection
+* L’union
+
+**✅ Solution implémentée**
+
+* Deux `HashSet<String>`
+* Méthode `retainAll()` pour l’intersection
+* Méthode `addAll()` pour l’union
+
+**▶️ Exemple d’exécution**
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/710e3987-5c13-45e0-8db8-7e488e69409c" width="85%" style="border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.15); filter:brightness(105%);" />
+</p>
+
+---
+
+## II. Generics
+
+### 1️⃣ Classe générique `GenericStorage<T>`
+
+**🧩 Problème**
+Créer une classe générique capable de stocker et manipuler n’importe quel type d’objet.
+
+**✅ Solution implémentée**
+
+* Classe `GenericStorage<T>`
+* Méthodes génériques pour :
+
+  * Ajouter un élément
+  * Supprimer un élément
+  * Rechercher par identifiant
+  * Afficher tous les éléments
+
+**📋 Exemple — Gestion des produits**
+
+```
+**************************************************
+        GESTION DES PRODUITS
+**************************************************
+1. Afficher tous les produits
+2. Rechercher un produit par id
+3. Ajouter un nouveau produit
+4. Supprimer un produit (par id)
+5. Quitter
+→ Votre choix :
+```
+
+**▶️ Exécution**
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1999f344-be1d-43b2-9ec0-96f6bf839e66" width="85%" style="border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.15); filter:contrast(110%) saturate(105%);" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6a79a029-6e06-410d-aea7-836286ed5ca0" width="85%" style="border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.15); filter:sepia(5%);" />
+</p>
+
+---
+
+## ✅ Conclusion
+
+Ce TP a permis de renforcer la compréhension :
+
+* Des collections Java (`List`, `Map`, `Set`)
+* Des expressions lambda et streams
+* Des classes génériques
+
+Il constitue une base solide pour le développement d’applications Java structurées et maintenables.
+
+---
+
+📌 *Réalisé par **Mustapha Elmifdali** — SDIA1*
