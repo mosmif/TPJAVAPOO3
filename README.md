@@ -1,4 +1,3 @@
-
 # 📘 Compte Rendu — TP3
 
 **Module :** UML Java  
@@ -16,7 +15,7 @@
 
 ---
 
-## I. Collections & Streams
+## 🟦 I. Collections & Streams
 
 ### 1️⃣ Manipulation d’une List de produits
 
@@ -43,7 +42,7 @@ Créer une application permettant de gérer une liste de produits :
 **▶️ Exécution**
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/17f0a17e-f566-4460-8588-9e85f4158d6b" width="85%" style="border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.15); filter:contrast(105%) saturate(110%);" />
+  <img src="https://github.com/user-attachments/assets/17f0a17e-f566-4460-8588-9e85f4158d6b" width="85%" style="border-radius:14px; box-shadow:0 10px 25px rgba(13,110,253,0.25); filter:contrast(110%) saturate(120%) brightness(105%);" />
 </p>
 
 ---
@@ -72,7 +71,7 @@ Gérer les notes des étudiants avec :
 **▶️ Exemple d’exécution**
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/2eddaf22-d157-4ea8-83e9-3d208dd7b1ef" width="85%" style="border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.15); filter:grayscale(10%) contrast(110%);" />
+  <img src="https://github.com/user-attachments/assets/2eddaf22-d157-4ea8-83e9-3d208dd7b1ef" width="85%" style="border-radius:14px; box-shadow:0 10px 25px rgba(25,135,84,0.25); filter:grayscale(5%) contrast(115%) brightness(103%);" />
 </p>
 
 ---
@@ -94,12 +93,12 @@ Gérer deux groupes d’étudiants et afficher :
 **▶️ Exemple d’exécution**
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/710e3987-5c13-45e0-8db8-7e488e69409c" width="85%" style="border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.15); filter:brightness(105%);" />
+  <img src="https://github.com/user-attachments/assets/710e3987-5c13-45e0-8db8-7e488e69409c" width="85%" style="border-radius:14px; box-shadow:0 10px 25px rgba(111,66,193,0.25); filter:brightness(108%) contrast(105%);" />
 </p>
 
 ---
 
-## II. Generics
+## 🟪 II. Generics
 
 ### 1️⃣ Classe générique `GenericStorage<T>`
 
@@ -133,11 +132,11 @@ Créer une classe générique capable de stocker et manipuler n’importe quel t
 **▶️ Exécution**
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1999f344-be1d-43b2-9ec0-96f6bf839e66" width="85%" style="border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.15); filter:contrast(110%) saturate(105%);" />
+  <img src="https://github.com/user-attachments/assets/1999f344-be1d-43b2-9ec0-96f6bf839e66" width="85%" style="border-radius:14px; box-shadow:0 10px 25px rgba(255,193,7,0.3); filter:contrast(115%) saturate(110%);" />
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/6a79a029-6e06-410d-aea7-836286ed5ca0" width="85%" style="border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.15); filter:sepia(5%);" />
+  <img src="https://github.com/user-attachments/assets/6a79a029-6e06-410d-aea7-836286ed5ca0" width="85%" style="border-radius:14px; box-shadow:0 10px 25px rgba(220,53,69,0.25); filter:sepia(8%) brightness(102%);" />
 </p>
 
 ---
